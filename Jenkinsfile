@@ -21,10 +21,10 @@ pipeline {
         }
 
 
-        stage ('Deployment Stage') {
+        stage ('pkg') {
             steps {
                 withMaven(maven : 'maven_3_5_0') {
-                    bat label: '', script: 'mvn deploy'
+                    bat label: '', script: 'mvn package'
                 }
             }
         }
